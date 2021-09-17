@@ -40,7 +40,7 @@ def dm(
     success_para_str="srun_portal_success?ac_id=39&theme=bnu&srun_domain=",
     callback=dmCallback,
 ):
-    # 发出下线get请求，自动下线
+    # 发出下线get请求，自动下线，其中需要用sha1加密获取sign参数
     t = math.floor(int(tool.get_time()) / 1000)
     params_online = getOnlineInfo(base_url + success_para_str)
     params = {
